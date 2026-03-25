@@ -8,5 +8,19 @@
   <li>Fruityvice API for ingredients</li>
 </ul>
 
-<p>Relationships:</p>
+<h1>Data Description</h1>
+
+<p>
+This application uses three sources of data. User data is generated using the Faker gem, which creates fake names and email addresses. Recipe data is pulled from TheMealDB API, which provides information such as recipe names, categories, and cooking instructions. Ingredient data is pulled from the Fruityvice API, which provides fruit names and their nutritional information, such as calories.
+</p>
+
+<p>
+The data is structured into three main tables: users, recipes, and ingredients. The users table stores basic user information (name and email). The recipes table stores recipe details such as name, category, and instructions. The ingredients table stores ingredient names and their calorie values.
+</p>
+
+<p>
+The datasets are connected using many-to-many relationships. Users and recipes are connected through a join table (recipe_users), allowing each user to save multiple recipes and each recipe to be saved by multiple users. Recipes and ingredients are also connected through another join table (ingredient_recipes), allowing each recipe to have multiple ingredients and each ingredient to be used in multiple recipes. Data from the APIs is integrated by assigning ingredients to recipes and linking recipes to users in the seed script.
+</p>
+
+<h1>Relationships:</h1>
 <%= image_tag "intro_project_erd.png", alt: "ERD Diagram", style: "max-width: 700px; border: 1px solid #ccc;" %>
