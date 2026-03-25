@@ -1,0 +1,19 @@
+<h1>Recipes</h1>
+
+<%= form_with url: recipes_path, method: :get, local: true do %>
+  <%= text_field_tag :query, params[:query], placeholder: "Search..." %>
+
+  <%= select_tag :ingredient_id,
+        options_from_collection_for_select(@ingredients, :id, :name, params[:ingredient_id]),
+        include_blank: "All Ingredients" %>
+
+  <%= submit_tag "Search" %>
+<% end %>
+
+<hr>
+
+<% @recipes.each do |recipe| %>
+  <p><%= link_to recipe.name, recipe_path(recipe) %></p>
+<% end %>
+
+<%= paginate @recipes %>

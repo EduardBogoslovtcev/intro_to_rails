@@ -1,0 +1,18 @@
+<h1><%= @recipe.name %></h1>
+
+<p><strong>Category:</strong> <%= @recipe.category %></p>
+<p><strong>Instructions:</strong> <%= @recipe.instructions %></p>
+
+<h3>Ingredients</h3>
+<ul>
+  <% @recipe.ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %></li>
+  <% end %>
+</ul>
+
+<h3>Users</h3>
+<ul>
+  <% @recipe.users.each do |user| %>
+    <li><%= user.name %></li>
+  <% end %>
+</ul>
