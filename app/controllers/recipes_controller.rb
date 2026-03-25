@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
 
     if params[:query].present?
-      @recipes = @recipes.where("name LIKE ?", "%#{params[:query]}%")
+      @recipes = @recipes.where("recipes.name LIKE ?", "%#{params[:query]}%")
     end
 
     if params[:ingredient_id].present?
