@@ -2,6 +2,11 @@ require 'net/http'
 require 'json'
 require 'faker'
 
+# Data sources:
+# 1. Users: Faker
+# 2. Recipes: https://www.themealdb.com/api.php
+# 3. Ingredients: https://www.fruityvice.com/#3
+
 puts "Clearing database..."
 RecipeUser.destroy_all
 IngredientRecipe.destroy_all
